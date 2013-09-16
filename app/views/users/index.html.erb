@@ -1,0 +1,21 @@
+<h1>Users#index</h1>
+<% flash.each do |key, value| %>
+  <em>
+    <%= key %>:
+    <%= value %>
+  </em>
+<% end %>
+
+<table>
+<tr>
+  <th>Name</th>
+  <th>Email</th>
+</tr>
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+  </tr>
+<% end %>
+</table>
+
