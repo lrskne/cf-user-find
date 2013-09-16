@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130915235950) do
+ActiveRecord::Schema.define(version: 20130916155042) do
+
+  create_table "licenses", force: true do |t|
+    t.integer  "number"
+    t.string   "state",      limit: 2
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "licenses", ["user_id"], name: "index_licenses_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

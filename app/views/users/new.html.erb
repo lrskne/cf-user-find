@@ -15,9 +15,23 @@
     <td><%= f.label :email%></td>
     <td><%= f.text_field :email %></td>
   </tr>
+  <%= f.fields_for :license do |l| %>
+  <tr>
+    <td><%= l.label :number %></td>
+    <td><%= l.text_field :number %></td>
+  </tr>
+  <tr>
+    <td><%= l.label :state %></td>
+    <td><%= l.text_field :state %></td>
+  </tr>
+
+  <% end %>
  </table>
 <%= f.submit %>
 
 <% end %>
+
+
+
 
 
